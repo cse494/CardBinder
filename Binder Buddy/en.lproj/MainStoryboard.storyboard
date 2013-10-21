@@ -17,6 +17,10 @@
                                     <constraint firstAttribute="width" constant="295" id="Elt-3a-Dk1"/>
                                     <constraint firstAttribute="height" constant="216" id="apX-NT-xjR"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="u0o-v1-grN"/>
+                                    <outlet property="delegate" destination="2" id="Drs-6W-e2i"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Binder Buddy!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uw8-LV-V3M">
                                 <constraints>
@@ -37,6 +41,7 @@
                                 </state>
                                 <connections>
                                     <action selector="ViewBinder:" destination="2" eventType="touchUpInside" id="IOd-TC-GZQ"/>
+                                    <action selector="readPressed" destination="2" eventType="touchUpInside" id="URA-Kh-1zr"/>
                                     <segue destination="TBG-4x-SGN" kind="modal" identifier="BinderSegue" id="bAP-aS-AIs"/>
                                 </connections>
                             </button>
@@ -53,7 +58,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DuR-pj-uuQ"/>
                     <connections>
-                        <outlet property="pickCardGame" destination="giZ-Iu-ilj" id="36g-lA-hDY"/>
+                        <outlet property="picker" destination="giZ-Iu-ilj" id="czd-15-YY2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -520,7 +525,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BinderViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ViewBinder:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pickCardGame" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

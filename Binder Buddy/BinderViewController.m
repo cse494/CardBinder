@@ -26,6 +26,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)ViewBinder:(UIButton *)sender {
+- (IBAction)ViewBinder:(UIButton *)sender
+{
 }
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [CardGamesController getCardGames].cardGames.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [[CardGamesController getCardGames].cardGames objectAtIndex:row];
+}
+
+-(IBAction)readPressed
+{    
+    int index = [self.picker selectedRowInComponent:0];
+    //games.currentGame = [games.cardGames objectAtIndex:index];
+    
+    //novelsViewController *nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"novelsVC"];
+    
+    //[self.navigationController pushViewController:nextView animated:YES];
+}
+
 @end

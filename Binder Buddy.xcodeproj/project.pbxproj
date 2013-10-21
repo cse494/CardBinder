@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0DFA701815B82000E5E497 /* CardGames.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA0DFA6F1815B82000E5E497 /* CardGames.plist */; };
+		BA0DFA731815C0BB00E5E497 /* CardGamesController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0DFA721815C0BB00E5E497 /* CardGamesController.m */; };
 		C6E587C118158D5500EAF1ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E587C018158D5500EAF1ED /* UIKit.framework */; };
 		C6E587C318158D5500EAF1ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E587C218158D5500EAF1ED /* Foundation.framework */; };
 		C6E587C518158D5500EAF1ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E587C418158D5500EAF1ED /* CoreGraphics.framework */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0DFA6F1815B82000E5E497 /* CardGames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CardGames.plist; sourceTree = "<group>"; };
+		BA0DFA711815C0BB00E5E497 /* CardGamesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardGamesController.h; sourceTree = "<group>"; };
+		BA0DFA721815C0BB00E5E497 /* CardGamesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGamesController.m; sourceTree = "<group>"; };
 		C6E587BD18158D5500EAF1ED /* Binder Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Binder Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E587C018158D5500EAF1ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C6E587C218158D5500EAF1ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,7 +113,10 @@
 				C6E587E4181596DE00EAF1ED /* BinderCardsListViewController.m */,
 				C6E587DB18158D5500EAF1ED /* BinderViewController.h */,
 				C6E587DC18158D5500EAF1ED /* BinderViewController.m */,
+				BA0DFA711815C0BB00E5E497 /* CardGamesController.h */,
+				BA0DFA721815C0BB00E5E497 /* CardGamesController.m */,
 				C6E587C718158D5500EAF1ED /* Supporting Files */,
+				BA0DFA6F1815B82000E5E497 /* CardGames.plist */,
 			);
 			path = "Binder Buddy";
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 				C6E587D518158D5500EAF1ED /* Default@2x.png in Resources */,
 				C6E587D718158D5500EAF1ED /* Default-568h@2x.png in Resources */,
 				C6E587DA18158D5500EAF1ED /* MainStoryboard.storyboard in Resources */,
+				BA0DFA701815B82000E5E497 /* CardGames.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +210,7 @@
 				C6E587E81815971500EAF1ED /* BinderCardDetailViewController.m in Sources */,
 				C6E587EB1815972D00EAF1ED /* BinderAddCardViewController.m in Sources */,
 				C6E587EE1815973E00EAF1ED /* BinderBuyCardViewController.m in Sources */,
+				BA0DFA731815C0BB00E5E497 /* CardGamesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +333,7 @@
 				C6E587E218158D5500EAF1ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
