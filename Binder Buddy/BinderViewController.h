@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CardGamesController.h"
+#import "BinderCardsListViewController.h"
 
 @interface BinderViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 

@@ -32,6 +32,15 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    CardGamesController *gameController = [CardGamesController getCardGames];
+    
+    if(gameController.currentGame != nil)
+    {
+        //NSString *path = [[NSBundle mainBundle] pathForResource:gameController.currentGame  ofType:@"txt"];
+        //[self loadText:path];
+        [self setTitle:gameController.currentGame];
+        self.navBar.title = gameController.currentGame;
+    }
 }
 
 - (void)didReceiveMemoryWarning

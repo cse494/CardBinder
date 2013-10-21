@@ -47,12 +47,14 @@
 
 -(IBAction)readPressed
 {    
+    CardGamesController *gameController = [CardGamesController getCardGames];
+    
     int index = [self.picker selectedRowInComponent:0];
-    //games.currentGame = [games.cardGames objectAtIndex:index];
+    gameController.currentGame = [gameController.cardGames objectAtIndex:index];
     
-    //novelsViewController *nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"novelsVC"];
+    BinderCardsListViewController *nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"binderCardsListVC"];
     
-    //[self.navigationController pushViewController:nextView animated:YES];
+    [self.navigationController pushViewController:nextView animated:YES];
 }
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardGamesController.h"
 
 @interface BinderCardsListViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 
 @end
