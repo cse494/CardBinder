@@ -10,5 +10,6 @@
 
 @interface BinderViewController : UIViewController
 - (IBAction)ViewBinder:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickCardGame;
 
 @end

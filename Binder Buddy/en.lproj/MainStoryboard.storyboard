@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="q2g-uK-X7z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E3067" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="q2g-uK-X7z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -52,6 +52,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DuR-pj-uuQ"/>
+                    <connections>
+                        <outlet property="pickCardGame" destination="giZ-Iu-ilj" id="36g-lA-hDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -517,6 +520,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BinderViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ViewBinder:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pickCardGame" candidateClass="UIPickerView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
