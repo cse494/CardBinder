@@ -13,8 +13,8 @@
 @interface BinderViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 - (IBAction)ViewBinder:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *picker;
 
-@property (strong, nonatomic) IBOutlet UIPickerView *picker;
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
 

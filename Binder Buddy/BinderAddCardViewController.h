@@ -7,7 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardListItem.h"
+@class BinderAddCardViewController;
 
-@interface BinderAddCardViewController : UIViewController
+
+@protocol BinderAddCardViewControllerDelegate <NSObject>
+
+-(void)BinderAddCardViewControllerDidCancel:(BinderAddCardViewController *)controller;
+
+//not sure what the issue is with this portion 
+-(void)BinderAddCardViewController:(BinderAddCardViewController *)controller didFinishAddingItem:(CardListItem *)item;
+
+@end
+
+//links to text input fields
+@interface BinderAddCardViewController : UITableViewController
+-(IBAction)Cancel:(id)sender;
+-(IBAction)Save:(id)sender;
+@property (nonatomic, strong) IBOutlet UITextField *addCardNameText;
+@property (nonatomic, strong) IBOutlet UITextField *addCardSetText;
+@property (nonatomic, strong) IBOutlet UITextField *addCardRarityText;
+@property (nonatomic, strong) IBOutlet UITextField *addCardQuantityText;
+@property (nonatomic, weak) id<BinderAddCardViewControllerDelegate> delegate;
 
 @end

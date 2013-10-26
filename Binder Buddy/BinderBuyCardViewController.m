@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 BinderInc. All rights reserved.
 //
 
+
+//todo set the website correctly for the item they are viewing for either ebay or tcgplayer
+//depending on which button they press allow users to surf site normally for purchases
+
 #import "BinderBuyCardViewController.h"
 
 @interface BinderBuyCardViewController ()

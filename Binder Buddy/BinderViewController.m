@@ -46,7 +46,7 @@
 }
 
 -(IBAction)readPressed
-{    
+{
     CardGamesController *gameController = [CardGamesController getCardGames];
     
     int index = [self.picker selectedRowInComponent:0];

@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardListItem.h"
+#import "BinderAddCardViewController.h"
 #import "CardGamesController.h"
 
-@interface BinderCardsListViewController : UITableViewController
-@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
+@interface BinderCardsListViewController : UITableViewController <BinderAddCardViewControllerDelegate>
+
+-(IBAction)addCard:(id)sender;
+
+@property(nonatomic, strong) IBOutlet UITableView *myTableView;
 
 @end

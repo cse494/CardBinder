@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA0DFA701815B82000E5E497 /* CardGames.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA0DFA6F1815B82000E5E497 /* CardGames.plist */; };
-		BA0DFA731815C0BB00E5E497 /* CardGamesController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0DFA721815C0BB00E5E497 /* CardGamesController.m */; };
+		90987CA7181C7DED00F5EE6B /* CardGames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90987CA4181C7DED00F5EE6B /* CardGames.plist */; };
+		90987CA8181C7DED00F5EE6B /* CardGamesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90987CA6181C7DED00F5EE6B /* CardGamesController.m */; };
+		90987CAA181C838C00F5EE6B /* BinderCardList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90987CA9181C838C00F5EE6B /* BinderCardList.plist */; };
+		C67E8B9B1815BC2F00516120 /* BinderCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C67E8B9A1815BC2F00516120 /* BinderCardModel.m */; };
+		C689B7EB1819C04E007FDC9A /* CardListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C689B7EA1819C04D007FDC9A /* CardListItem.m */; };
 		C6E587C118158D5500EAF1ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E587C018158D5500EAF1ED /* UIKit.framework */; };
 		C6E587C318158D5500EAF1ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E587C218158D5500EAF1ED /* Foundation.framework */; };
 		C6E587C518158D5500EAF1ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E587C418158D5500EAF1ED /* CoreGraphics.framework */; };
@@ -27,9 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BA0DFA6F1815B82000E5E497 /* CardGames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CardGames.plist; sourceTree = "<group>"; };
-		BA0DFA711815C0BB00E5E497 /* CardGamesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardGamesController.h; sourceTree = "<group>"; };
-		BA0DFA721815C0BB00E5E497 /* CardGamesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGamesController.m; sourceTree = "<group>"; };
+		90987CA4181C7DED00F5EE6B /* CardGames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CardGames.plist; sourceTree = "<group>"; };
+		90987CA5181C7DED00F5EE6B /* CardGamesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardGamesController.h; sourceTree = "<group>"; };
+		90987CA6181C7DED00F5EE6B /* CardGamesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGamesController.m; sourceTree = "<group>"; };
+		90987CA9181C838C00F5EE6B /* BinderCardList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BinderCardList.plist; sourceTree = "<group>"; };
+		C67E8B991815BC2F00516120 /* BinderCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinderCardModel.h; sourceTree = "<group>"; };
+		C67E8B9A1815BC2F00516120 /* BinderCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinderCardModel.m; sourceTree = "<group>"; };
+		C689B7E91819C04D007FDC9A /* CardListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardListItem.h; sourceTree = "<group>"; };
+		C689B7EA1819C04D007FDC9A /* CardListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardListItem.m; sourceTree = "<group>"; };
 		C6E587BD18158D5500EAF1ED /* Binder Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Binder Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E587C018158D5500EAF1ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C6E587C218158D5500EAF1ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -70,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C67E8B9C1815BC3600516120 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C67E8B991815BC2F00516120 /* BinderCardModel.h */,
+				C67E8B9A1815BC2F00516120 /* BinderCardModel.m */,
+				90987CA9181C838C00F5EE6B /* BinderCardList.plist */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		C6E587B418158D5500EAF1ED = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +118,10 @@
 		C6E587C618158D5500EAF1ED /* Binder Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				90987CA4181C7DED00F5EE6B /* CardGames.plist */,
+				90987CA5181C7DED00F5EE6B /* CardGamesController.h */,
+				90987CA6181C7DED00F5EE6B /* CardGamesController.m */,
+				C67E8B9C1815BC3600516120 /* Model */,
 				C6E587CF18158D5500EAF1ED /* BinderAppDelegate.h */,
 				C6E587D018158D5500EAF1ED /* BinderAppDelegate.m */,
 				C6E587D818158D5500EAF1ED /* MainStoryboard.storyboard */,
@@ -111,12 +133,11 @@
 				C6E587ED1815973E00EAF1ED /* BinderBuyCardViewController.m */,
 				C6E587E3181596DE00EAF1ED /* BinderCardsListViewController.h */,
 				C6E587E4181596DE00EAF1ED /* BinderCardsListViewController.m */,
+				C689B7E91819C04D007FDC9A /* CardListItem.h */,
+				C689B7EA1819C04D007FDC9A /* CardListItem.m */,
 				C6E587DB18158D5500EAF1ED /* BinderViewController.h */,
 				C6E587DC18158D5500EAF1ED /* BinderViewController.m */,
-				BA0DFA711815C0BB00E5E497 /* CardGamesController.h */,
-				BA0DFA721815C0BB00E5E497 /* CardGamesController.m */,
 				C6E587C718158D5500EAF1ED /* Supporting Files */,
-				BA0DFA6F1815B82000E5E497 /* CardGames.plist */,
 			);
 			path = "Binder Buddy";
 			sourceTree = "<group>";
@@ -192,7 +213,8 @@
 				C6E587D518158D5500EAF1ED /* Default@2x.png in Resources */,
 				C6E587D718158D5500EAF1ED /* Default-568h@2x.png in Resources */,
 				C6E587DA18158D5500EAF1ED /* MainStoryboard.storyboard in Resources */,
-				BA0DFA701815B82000E5E497 /* CardGames.plist in Resources */,
+				90987CA7181C7DED00F5EE6B /* CardGames.plist in Resources */,
+				90987CAA181C838C00F5EE6B /* BinderCardList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +232,9 @@
 				C6E587E81815971500EAF1ED /* BinderCardDetailViewController.m in Sources */,
 				C6E587EB1815972D00EAF1ED /* BinderAddCardViewController.m in Sources */,
 				C6E587EE1815973E00EAF1ED /* BinderBuyCardViewController.m in Sources */,
-				BA0DFA731815C0BB00E5E497 /* CardGamesController.m in Sources */,
+				C67E8B9B1815BC2F00516120 /* BinderCardModel.m in Sources */,
+				C689B7EB1819C04E007FDC9A /* CardListItem.m in Sources */,
+				90987CA8181C7DED00F5EE6B /* CardGamesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
