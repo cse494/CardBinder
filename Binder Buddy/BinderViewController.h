@@ -7,19 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CardGamesController.h"
-#import "BinderCardsListViewController.h"
 
-@interface BinderViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
-
+@interface BinderViewController : UIViewController
 - (IBAction)ViewBinder:(UIButton *)sender;
-
-@property (strong, nonatomic) IBOutlet UIPickerView *picker;
-
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
-
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
-
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
 
 @end
