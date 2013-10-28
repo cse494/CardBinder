@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CardListItem.h"
+#import "BinderCardModel.h"
 @class BinderAddCardViewController;
 
 
@@ -16,12 +16,12 @@
 -(void)BinderAddCardViewControllerDidCancel:(BinderAddCardViewController *)controller;
 
 //not sure what the issue is with this portion 
--(void)BinderAddCardViewController:(BinderAddCardViewController *)controller didFinishAddingItem:(CardListItem *)item;
+-(void)BinderAddCardViewController:(BinderAddCardViewController *)controller didFinishAddingItem:(BinderCardModel *)item;
 
 @end
 
 //links to text input fields
-@interface BinderAddCardViewController : UITableViewController
+@interface BinderAddCardViewController : UIViewController;
 -(IBAction)Cancel:(id)sender;
 -(IBAction)Save:(id)sender;
 @property (nonatomic, strong) IBOutlet UITextField *addCardNameText;

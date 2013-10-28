@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CardListItem.h"
+#import "BinderCardModel.h"
 #import "BinderAddCardViewController.h"
 #import "CardGamesController.h"
 
@@ -16,5 +16,5 @@
 -(IBAction)addCard:(id)sender;
 
 @property(nonatomic, strong) IBOutlet UITableView *myTableView;
-
+@property(nonatomic, strong) NSMutableArray *arrayBinder;
 @end

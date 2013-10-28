@@ -8,7 +8,6 @@
 
 #import "BinderCardsListViewController.h"
 #import "BinderCardDetailViewController.h"
-#import "CardListItem.h"
 
 @interface BinderCardsListViewController ()
 {
@@ -17,7 +16,6 @@
     //array for loaded binder
     NSMutableData *EbayData;
     NSURLConnection *connection;
-    NSMutableArray *arrayBinder;
     NSMutableArray *arrayEbay;
 }
 @end
@@ -35,13 +33,16 @@
 
 //
 - (IBAction)addCard:(id)sender {
-    CardListItem *item = [[CardListItem alloc]init];
-    item.text = @"New Card";
-    [arrayBinder addObject:item];
+    BinderCardModel *item = [[BinderCardModel alloc]init];
+    item.cardName = @"New Card";
+    [self.arrayBinder addObject:item];
     
     [self.tableView reloadData];
     [self saveCardListItems];
     
+    BinderCardsListViewController *nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"addCardVC"];
+    
+    [self.navigationController pushViewController:nextView animated:YES];
 }
 
 //location to store binder data
@@ -59,7 +60,7 @@
 -(void)saveCardListItems{
     NSMutableData *data =[[NSMutableData alloc]init];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
-    [archiver encodeObject:arrayBinder forKey:@"CardListItems"];
+    [archiver encodeObject:self.arrayBinder forKey:@"BinderCardModel"];
     [archiver finishEncoding];
     [data writeToFile:[self dataFilePath] atomically:YES];
 }
@@ -72,28 +73,28 @@
         NSData *data = [[NSData alloc] initWithContentsOfFile:path];
         NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]initForReadingWithData:data];
         
-        arrayBinder = [unarchiver decodeObjectForKey:@"CardListItems"];
+        self.arrayBinder = [unarchiver decodeObjectForKey:@"BinderCardModel"];
         [unarchiver finishDecoding];
     }
     else{
-        CardListItem *item;
-        arrayBinder = [[NSMutableArray alloc] initWithCapacity:1];
+        BinderCardModel *item;
+        self.arrayBinder = [[NSMutableArray alloc] initWithCapacity:1];
         
         for(int i=0; i<1; i++){
             
-            item = [[CardListItem alloc] init];
-            item.text = @"New card";
+            item = [[BinderCardModel alloc] init];
+            item.cardName = @"New card";
             
-            [arrayBinder addObject:item];
+            [self.arrayBinder addObject:item];
         }
     }
     
 }
 
 //after adding an item, the recently added item is appended to the end of the table
--(void)BinderAddCardViewController:(BinderAddCardViewController *)controller didFinishAddingItem:(CardListItem *)item{
-    int newRowIndex = [arrayBinder count];
-    [arrayBinder addObject:item];
+-(void)BinderAddCardViewController:(BinderAddCardViewController *)controller didFinishAddingItem:(BinderCardModel *)item{
+    int newRowIndex = [self.arrayBinder count];
+    [self.arrayBinder addObject:item];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
     NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
     
@@ -221,7 +222,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return arrayBinder.count;
+    return [self.arrayBinder count];
 }
 
 //populates the table view with each row data
@@ -229,19 +230,30 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if(!cell){
+    
+    BinderCardModel *binder = [self.arrayBinder objectAtIndex:indexPath.row];
+    
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1081];
+    UILabel *setLabel = (UILabel *)[cell viewWithTag:1082];
+    UILabel *rarityLabel = (UILabel *)[cell viewWithTag:1083];
+    UILabel *quantityLabel = (UILabel *)[cell viewWithTag:1084];
+    UIImage *image = (UIImage *)[cell viewWithTag:1085];
+    
+    if(!cell)
+    {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-   
+    nameLabel.text = binder.cardName;
+    setLabel.text = binder.cardSet;
+    rarityLabel.text = binder.cardRarity;
+    quantityLabel.text = binder.cardQuantity;
+   // image = binder.cardSet;
+
     /****************************/
     //this model needs to be changed since the data loaded is from the plist and not from the ebay
     //populated data not sure where to go from here yet tho but might need to delimit the text
     //of each row and store those object.card_____ of each component this is important for the card detail
-    BinderCardModel *object = arrayBinder[indexPath.row];
     
-    //NSString *celltext=[NSString stringWithFormat:@"%@/n%@/n%@/n%@",object.cardName,object.cardSet, object.cardRarity, object.cardQuantity];
-    
-    cell.textLabel.text = @"Hello world";
     //celltext;
     return cell;
 }

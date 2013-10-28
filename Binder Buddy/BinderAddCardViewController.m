@@ -18,9 +18,9 @@
 @synthesize addCardRarityText;
 @synthesize addCardSetText;
 @synthesize addCardQuantityText;
-
+/*
 //Default style for tableview
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithStyle:(UIView)style
 {
     self = [super initWithStyle:style];
     if (self) {
@@ -28,7 +28,7 @@
     }
     return self;
 }
-
+*/
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -64,10 +64,12 @@
 //add card button saves the data from each of the input text fields
 -(IBAction)Save:(id)sender{
     //stores card item
-    CardListItem *item = [[CardListItem alloc]init];
-    //concatenates input fields into single display string using newline delimit
-    NSString *newCardText = [NSString stringWithFormat:@"%@/n%@/n%@/n%@", self.addCardNameText.text, self.addCardSetText, self.addCardRarityText.text, self.addCardQuantityText];
-    item.text = newCardText;
+    BinderCardModel *item = [[BinderCardModel alloc]init];
+    
+    item.cardName = self.addCardNameText.text;
+    item.cardSet = self.addCardSetText.text;
+    item.cardRarity = self.addCardRarityText.text;
+    item.cardQuantity = self.addCardQuantityText.text;
     
     //calls didFinishAddingItem function passing item name
     [self.delegate BinderAddCardViewController:self didFinishAddingItem:item];
