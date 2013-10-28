@@ -11,7 +11,7 @@
 
 @interface BinderCardDetailViewController : UIViewController
 
-@property(strong, nonatomic) BinderCardModel *cardDetail;
+@property(strong, nonatomic) BinderCardModel * cardDetail;
 
 //links to each of the labels for card detail
 @property(strong, nonatomic) IBOutlet UILabel *averagePrice;

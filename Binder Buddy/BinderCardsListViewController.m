@@ -7,7 +7,7 @@
 //
 
 #import "BinderCardsListViewController.h"
-#import "BinderCardDetailViewController.h"
+
 
 @interface BinderCardsListViewController ()
 {
@@ -16,7 +16,6 @@
     //array for loaded binder
     NSMutableData *EbayData;
     NSURLConnection *connection;
-    NSMutableArray *arrayEbay;
 }
 @end
 
@@ -112,7 +111,7 @@
     [super viewDidLoad];
     
     //holds each card detail from ebay
-    arrayEbay =[[NSMutableArray alloc]init];
+    self.arrayEbay =[[NSMutableArray alloc]init];
     [self loadCardListItems];
     NSLog(@"%@",[self dataFilePath]);
 }
@@ -168,7 +167,7 @@
         newCard.cardPrice = [currentPriceLayer objectForKey:@"_value_"];
        
         //stores ablum instance into array
-        [arrayEbay addObject:newCard];
+        [self.arrayEbay addObject:newCard];
     }
     //reloads table with loaded data
     [[self myTableView]reloadData];
@@ -180,9 +179,9 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.myTableView indexPathForSelectedRow];
-        BinderCardModel *object = arrayEbay[indexPath.row];
+        BinderCardModel *object = self.arrayBinder[indexPath.row];
         
-        [arrayEbay removeAllObjects];
+        //[self.arrayEbay removeAllObjects];
         
         NSString *ebayurl = [NSString stringWithFormat:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=%@ %@", object.cardName, object.cardSet];
         NSURL *url = [NSURL URLWithString:ebayurl];
@@ -237,7 +236,7 @@
     UILabel *setLabel = (UILabel *)[cell viewWithTag:1082];
     UILabel *rarityLabel = (UILabel *)[cell viewWithTag:1083];
     UILabel *quantityLabel = (UILabel *)[cell viewWithTag:1084];
-    UIImage *image = (UIImage *)[cell viewWithTag:1085];
+    //UIImage *image = (UIImage *)[cell viewWithTag:1085];
     
     if(!cell)
     {

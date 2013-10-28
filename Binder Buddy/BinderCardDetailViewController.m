@@ -17,7 +17,7 @@
 #pragma mark - Managing the card item
 
 //checks if card detail is the same item if not repopulate with new data
--(void)setCardDetail:(BinderCardModel *)newCardDetail{
+-(void)setCardDetail:(id)newCardDetail{
     if(_cardDetail != newCardDetail)
     {
         _cardDetail = newCardDetail;
@@ -32,7 +32,7 @@
     //update the card detail interface with the card item
     
     if(self.cardDetail){
-        self.cardImage.image = self.cardDetail.cardImage;
+        //self.cardImage.image = self.cardDetail.cardImage;
         self.cardName.text = self.cardDetail.cardName;
         self.cardRarity.text = self.cardDetail.cardRarity;
         self.cardSet.text = self.cardDetail.cardSet;

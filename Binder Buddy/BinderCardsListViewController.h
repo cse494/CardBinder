@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BinderCardModel.h"
 #import "BinderAddCardViewController.h"
+#import "BinderCardDetailViewController.h"
 #import "CardGamesController.h"
 
 @interface BinderCardsListViewController : UITableViewController <BinderAddCardViewControllerDelegate>
@@ -17,4 +18,5 @@
 
 @property(nonatomic, strong) IBOutlet UITableView *myTableView;
 @property(nonatomic, strong) NSMutableArray *arrayBinder;
+@property(nonatomic, strong) NSMutableArray *arrayEbay;
 @end
