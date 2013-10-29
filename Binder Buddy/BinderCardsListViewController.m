@@ -82,12 +82,12 @@
         for(int i=0; i<1; i++){
             
             item = [[BinderCardModel alloc] init];
-            item.cardName = @"New card";
+            item.cardName = @"Dark Magician";
+            item.cardSet = @"sye-001";
             
             [self.arrayBinder addObject:item];
         }
     }
-    
 }
 
 //after adding an item, the recently added item is appended to the end of the table
@@ -99,6 +99,7 @@
     
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self saveCardListItems];
 }
 
 //return to last view if canceled
@@ -182,11 +183,14 @@
         BinderCardModel *object = self.arrayBinder[indexPath.row];
         
         //[self.arrayEbay removeAllObjects];
-        
-        NSString *ebayurl = [NSString stringWithFormat:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=%@ %@", object.cardName, object.cardSet];
+        /*
+        NSString *ebayurl = [NSString stringWithFormat:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=%@&%@", object.cardName, object.cardSet];
         NSURL *url = [NSURL URLWithString:ebayurl];
-        /* NSURL *url = [NSURL URLWithString:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=" & object.cardName & " " & object.cardSet]];*/
+         */
         
+        /*NSURL *url = [NSURL URLWithString:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=" & object.cardName & " " & object.cardSet]];*/
+        
+        /*
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
         connection = [NSURLConnection connectionWithRequest:request delegate:self];
@@ -194,7 +198,7 @@
         if(connection){
             EbayData=[[NSMutableData alloc]init];
         }
-        
+        */
         [[segue destinationViewController] setCardDetail:object];
     }
     else if([segue.identifier isEqualToString:@"AddCard"]){

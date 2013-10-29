@@ -22,8 +22,9 @@
 @property(strong, nonatomic) IBOutlet UILabel *cardRarity;
 @property(strong, nonatomic) IBOutlet UILabel *cardSet;
 @property(strong, nonatomic) IBOutlet UILabel *cardText;
-@property(strong, nonatomic) IBOutlet UIImageView *cardImage;
+@property(weak, nonatomic) IBOutlet UIImageView *cardImage;
 
+- (IBAction)alertFeatures;
 //todo for future
 //add property for buy it now button
 //will link to ebay web and troll n toad web depending on button

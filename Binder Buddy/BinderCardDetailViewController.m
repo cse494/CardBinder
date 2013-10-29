@@ -7,7 +7,8 @@
 //
 
 #import "BinderCardDetailViewController.h"
-
+NSString *counter = @"";
+NSMutableArray *valueArray;
 @interface BinderCardDetailViewController ()
 -(void)configureView;
 @end
@@ -21,8 +22,22 @@
     if(_cardDetail != newCardDetail)
     {
         _cardDetail = newCardDetail;
-        [self configureView];
+        [self performSearchForCard];
     }
+}
+-(void) loadImage
+{
+    NSString *ImageURL = @"http://p.ebaystatic.com/aw/pics/globalheader/spr11.png";
+   // NSString *ImageURL = self.cardDetail.cardImageURL.accessibilityValue;
+    /*
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
+    self.cardImage.image = [UIImage imageWithData:imageData];
+     */
+    
+    NSURL *url = [NSURL URLWithString:ImageURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    self.cardImage = [[UIImageView alloc] initWithImage:[UIImage imageWithData:data]];
+    [self.cardImage setImage:[UIImage imageWithData:data]];
 }
 
 //takes the card information stored in cardDetail and sets the labels
@@ -32,6 +47,7 @@
     //update the card detail interface with the card item
     
     if(self.cardDetail){
+       
         //self.cardImage.image = self.cardDetail.cardImage;
         self.cardName.text = self.cardDetail.cardName;
         self.cardRarity.text = self.cardDetail.cardRarity;
@@ -54,13 +70,13 @@
     return self;
 }
 
-
 //load initial view upon loading view
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //[self performSearchForCard];
 	// Do any additional setup after loading the view.
-    [self configureView];
+    //[self configureView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,5 +84,112 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) performSearchForCard
+{
+    //[results removeAllObjects];
+    //[self.tableView reloadData];
+    
+    //configure the spinner
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    spinner.hidesWhenStopped = YES;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+    
+    
+    //go to a background thread so we don't block
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSString *query = [NSString stringWithFormat:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=%@&%@", self.cardDetail.cardName, self.cardDetail.cardSet];
+        
+        query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSURL *url = [NSURL URLWithString:query];
+        
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        [self processData:data];
+                
+        dispatch_async(dispatch_get_main_queue(), ^{
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+                    [self loadImage];
+                });
+            [spinner stopAnimating];
+            [self configureView];
+        });
+    });
+    
+}
+
+- (IBAction)alertFeatures
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Buy it now"
+                                                    message:@"This feature is coming soon"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    //[alert release];
+}
+-(void) processData:(NSData *)searchData
+{
+    double sum = 0.0;
+    double max = 0.0;
+    double min = DBL_MAX;
+    double recent = 0.0;
+    //parse and process the server reply
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:searchData options:kNilOptions error:nil];
+    
+    //ignore some of the basic results
+    NSDictionary *topLevelResults = json[@"findItemsByKeywordsResponse"];
+    
+    for(NSDictionary *searchResults in topLevelResults)
+    {
+        NSLog(@"%@", searchResults[@"searchResult"]);
+        for(NSDictionary *items in searchResults[@"searchResult"])
+        {
+            counter = items[@"@count"];
+            valueArray = [[NSMutableArray alloc] initWithCapacity:counter.integerValue];
+            for(NSDictionary *autoPayArray in items[@"item"])
+            {
+                if(self.cardDetail.cardImageURL == nil)
+                    self.cardDetail.cardImageURL = autoPayArray[@"galleryURL"];
+                for(NSDictionary *autoPay in autoPayArray[@"sellingStatus"])
+                {
+                    for(NSDictionary *values in autoPay[@"convertedCurrentPrice"])
+                    {
+                        NSString *value = values[@"__value__"];
+                        [valueArray addObject:[NSNumber numberWithDouble:value.doubleValue]];
+                        if(recent == 0.0)
+                            recent = [value doubleValue];
+                    }
+                    
+                }
+            }
+            
+        }
+        
+    }
+  
+
+    for(NSNumber* num in valueArray)
+    {
+        double value = [num doubleValue];
+        if(value > max)
+            max = value;
+        if(value < min)
+            min = value;
+        
+        sum += value;
+    }
+    double average = sum/counter.doubleValue;
+    self.maxPrice.text =[NSString stringWithFormat:@"%.02f", max];
+    self.minPrice.text =[NSString stringWithFormat:@"%.02f", min];
+    self.averagePrice.text =[NSString stringWithFormat:@"%.02f", average];
+    self.recentPrice.text = [NSString stringWithFormat:@"%.02f", recent];
+ 
+    NSLog(@"");
+
+}
+
 
 @end

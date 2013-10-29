@@ -10,5 +10,4 @@
 
 @interface BinderBuyCardViewController : UIViewController
 
-
 @end
