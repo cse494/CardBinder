@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="q2g-uK-X7z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="q2g-uK-X7z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -41,7 +41,7 @@
                                 </state>
                                 <connections>
                                     <action selector="readPressed" destination="2" eventType="touchUpInside" id="Bdk-rj-n80"/>
-                                    <segue destination="TBG-4x-SGN" kind="modal" identifier="BinderSegue" id="bAP-aS-AIs"/>
+                                    <segue destination="Kja-o6-yRA" kind="push" identifier="BinderSegue" id="O6w-J5-BgP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="5"/>
+            <point key="canvasLocation" x="1128" y="5"/>
         </scene>
         <!--Binder Cards List View Controller-->
         <scene sceneID="e9w-z2-kL2">
@@ -72,9 +72,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="HYa-eL-wFF">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Nzn-LI-NAV">
-                                <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="99"/>
@@ -331,6 +336,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Buy it now" id="d5e-dq-3E0">
                             <connections>
                                 <action selector="alertFeatures" destination="ttQ-eI-Yec" id="qn5-U7-CsF"/>
+                                <segue destination="b7C-9j-nZe" kind="push" id="3xn-Nb-UbF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -348,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2T-7i-4RF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="311"/>
+            <point key="canvasLocation" x="2031" y="319"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="63U-gP-T5Q">
@@ -366,25 +372,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuL-tp-jN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="cvc-Pw-b0n">
-            <objects>
-                <navigationController id="TBG-4x-SGN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xxr-20-eMN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Kja-o6-yRA" kind="relationship" relationship="rootViewController" id="hh4-Pt-F1R"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TX9-oe-D9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1124" y="5"/>
+            <point key="canvasLocation" x="739" y="5"/>
         </scene>
         <!--Binder Add Card View Controller-->
         <scene sceneID="1Kp-fH-5rC">
@@ -517,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mpe-Zk-h2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="319"/>
+            <point key="canvasLocation" x="2469" y="314"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DUj-HQ-kyM">
@@ -536,24 +524,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKh-Oz-Gwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2031" y="-287"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="jne-yb-jeH">
-            <objects>
-                <navigationController id="7be-GJ-5CV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Op0-yD-ach">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="b7C-9j-nZe" kind="relationship" relationship="rootViewController" id="p52-1G-SdR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zod-me-IVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2486" y="319"/>
         </scene>
     </scenes>
     <classes>
@@ -575,7 +545,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BinderCardDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="alertFeatures"/>
-                <relationship kind="action" name="alertFeatures:"/>
                 <relationship kind="outlet" name="averagePrice" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cardImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cardName" candidateClass="UILabel"/>

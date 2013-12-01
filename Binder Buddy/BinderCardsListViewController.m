@@ -55,6 +55,13 @@
     return [[self documentsDirectory] stringByAppendingPathComponent:@"YugiohBinder.plist"];
 }
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.arrayBinder removeObjectAtIndex:indexPath.row];
+    [tableView reloadData];
+    [self saveCardListItems];
+}
+
 //stores binder data into arrayBinder 
 -(void)saveCardListItems{
     NSMutableData *data =[[NSMutableData alloc]init];

@@ -52,9 +52,9 @@
     int index = [self.picker selectedRowInComponent:0];
     gameController.currentGame = [gameController.cardGames objectAtIndex:index];
     
-    BinderCardsListViewController *nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"binderCardsListVC"];
+    /*BinderCardsListViewController *nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"binderCardsListVC"];
     
-    [self.navigationController pushViewController:nextView animated:YES];
+    [self.navigationController pushViewController:nextView animated:YES];*/
 }
 
 @end
