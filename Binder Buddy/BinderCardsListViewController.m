@@ -52,7 +52,23 @@
 //file path for binder data to be toggled based which binder was selected from beginning of
 //picker view default is YuGiOh for now
 -(NSString *)dataFilePath{
+    
+     if(MYGlobalBinderIndex ==0)
+     {
+     return [[self documentsDirectory] stringByAppendingPathComponent:@"PokemonBinder.plist"];
+     }
+     else if(MYGlobalBinderIndex==1)
+     {
+      return [[self documentsDirectory] stringByAppendingPathComponent:@"YugiohBinder.plist"];
+     }
+     else
+     {
+     return [[self documentsDirectory] stringByAppendingPathComponent:@"MTGBinder.plist"];
+     }
+     
+     /*
     return [[self documentsDirectory] stringByAppendingPathComponent:@"YugiohBinder.plist"];
+      */
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -189,23 +205,6 @@
         NSIndexPath *indexPath = [self.myTableView indexPathForSelectedRow];
         BinderCardModel *object = self.arrayBinder[indexPath.row];
         
-        //[self.arrayEbay removeAllObjects];
-        /*
-        NSString *ebayurl = [NSString stringWithFormat:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=%@&%@", object.cardName, object.cardSet];
-        NSURL *url = [NSURL URLWithString:ebayurl];
-         */
-        
-        /*NSURL *url = [NSURL URLWithString:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=" & object.cardName & " " & object.cardSet]];*/
-        
-        /*
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        
-        connection = [NSURLConnection connectionWithRequest:request delegate:self];
-        
-        if(connection){
-            EbayData=[[NSMutableData alloc]init];
-        }
-        */
         [[segue destinationViewController] setCardDetail:object];
     }
     else if([segue.identifier isEqualToString:@"AddCard"]){

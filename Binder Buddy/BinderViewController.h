@@ -10,11 +10,13 @@
 #import "CardGamesController.h"
 #import "BinderCardsListViewController.h"
 
+extern NSInteger MYGlobalBinderIndex;
+
 @interface BinderViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 - (IBAction)ViewBinder:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;
-
+@property(nonatomic, assign) int *binderIndex;
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
 
@@ -23,3 +25,5 @@
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
 
 @end
+
+NSInteger MYGlobalBinderIndex;

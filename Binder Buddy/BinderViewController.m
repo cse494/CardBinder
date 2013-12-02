@@ -45,11 +45,27 @@
     return [[CardGamesController getCardGames].cardGames objectAtIndex:row];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"BinderSegue"])
+    {
+        CardGamesController *gameController = [CardGamesController getCardGames];
+        
+        int index = [self.picker selectedRowInComponent:0];
+        MYGlobalBinderIndex = index;
+        gameController.currentGame = [gameController.cardGames objectAtIndex:index];
+    }
+    
+}
+
+//delete this function and instead add prepare for segue
 -(IBAction)readPressed
 {
     CardGamesController *gameController = [CardGamesController getCardGames];
     
     int index = [self.picker selectedRowInComponent:0];
+    MYGlobalBinderIndex = index;
     gameController.currentGame = [gameController.cardGames objectAtIndex:index];
     
     /*BinderCardsListViewController *nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"binderCardsListVC"];

@@ -11,6 +11,7 @@
 #import "BinderAddCardViewController.h"
 #import "BinderCardDetailViewController.h"
 #import "CardGamesController.h"
+#import "BinderViewController.h"
 
 @interface BinderCardsListViewController : UITableViewController <BinderAddCardViewControllerDelegate>
 

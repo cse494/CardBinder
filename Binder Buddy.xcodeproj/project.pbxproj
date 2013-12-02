@@ -118,10 +118,10 @@
 		C6E587C618158D5500EAF1ED /* Binder Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				C67E8B9C1815BC3600516120 /* Model */,
 				90987CA4181C7DED00F5EE6B /* CardGames.plist */,
 				90987CA5181C7DED00F5EE6B /* CardGamesController.h */,
 				90987CA6181C7DED00F5EE6B /* CardGamesController.m */,
-				C67E8B9C1815BC3600516120 /* Model */,
 				C6E587CF18158D5500EAF1ED /* BinderAppDelegate.h */,
 				C6E587D018158D5500EAF1ED /* BinderAppDelegate.m */,
 				C6E587D818158D5500EAF1ED /* MainStoryboard.storyboard */,
