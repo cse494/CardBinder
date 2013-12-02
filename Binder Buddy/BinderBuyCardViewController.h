@@ -10,4 +10,6 @@
 
 @interface BinderBuyCardViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet  UIWebView *ebayPage;
+
 @end

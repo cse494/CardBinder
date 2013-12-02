@@ -33,6 +33,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    /*pass in search parameters and build url string similar to checking the card prices*/
+    NSString *fullURL = @"http://ebay.com";
+    NSURL *url = [NSURL URLWithString:fullURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [_ebayPage loadRequest:requestObj];
 }
 
 - (void)didReceiveMemoryWarning

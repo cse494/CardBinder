@@ -65,10 +65,6 @@
      {
      return [[self documentsDirectory] stringByAppendingPathComponent:@"MTGBinder.plist"];
      }
-     
-     /*
-    return [[self documentsDirectory] stringByAppendingPathComponent:@"YugiohBinder.plist"];
-      */
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{

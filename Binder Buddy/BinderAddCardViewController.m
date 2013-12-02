@@ -75,6 +75,25 @@
     [self.delegate BinderAddCardViewController:self didFinishAddingItem:item];
 }
 
+/*
+ 
+-(IBAction)DidTypeInSearchBar{
+ 
+    array  
+    for(i=0;i<arrayCardDatabase.count;i++)
+    {
+        if(strcompare(arraybinder.name, searchedParameter) >= searchedPrameter.strlegnth)
+        {
+            display possible names as drop down
+        }
+    }
+ 
+    display names
+    reload view
+ 
+ }
+*/
+
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     return nil;
