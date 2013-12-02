@@ -83,7 +83,7 @@
     [data writeToFile:[self dataFilePath] atomically:YES];
 }
 
-//loads binder data from file path otherwise defaults binder with a sinle card
+//loads binder data from file path otherwise defaults binder with a single card
 -(void)loadCardListItems{
     NSString *path = [self dataFilePath];
     
@@ -212,6 +212,25 @@
     else{
         //do nothing
     }
+}
+
+#pragma mark - Search Bar Delegation
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    for(int i=0; i<_arrayBinder.count;i++)
+    {
+        if(searchBar.text)
+        {
+            
+        }
+    }
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.searchBar.text = @"";
+    [self.tableView endEditing:YES];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source

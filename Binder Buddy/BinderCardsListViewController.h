@@ -17,6 +17,7 @@
 
 -(IBAction)addCard:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property(nonatomic, strong) IBOutlet UITableView *myTableView;
 @property(nonatomic, strong) NSMutableArray *arrayBinder;
 @property(nonatomic, strong) NSMutableArray *arrayEbay;
