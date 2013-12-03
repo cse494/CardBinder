@@ -235,6 +235,8 @@
 #pragma mark - Search Bar Delegation
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    [self loadCardListItems];
+    
     NSMutableArray *searchedCards = [NSMutableArray array];
     
     
