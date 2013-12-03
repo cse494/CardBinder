@@ -11,5 +11,7 @@
 @interface BinderBuyCardViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet  UIWebView *ebayPage;
+@property(nonatomic, strong) NSString *cardName;
+@property(nonatomic, strong) NSString *cardSet;
 
 @end

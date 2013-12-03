@@ -100,7 +100,7 @@ NSMutableArray *valueArray;
     
     //go to a background thread so we don't block
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        NSString *query = [NSString stringWithFormat:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=%@&%@", self.cardDetail.cardName, self.cardDetail.cardSet];
+        NSString *query = [NSString stringWithFormat:@"http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=JamesRod-e299-4b0d-aa2c-cbc6feed4d6a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=-lot -x2 -x3 -grabbab -collection -binder -playset %@ %@", self.cardDetail.cardName, self.cardDetail.cardSet];
         
         query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
@@ -191,5 +191,14 @@ NSMutableArray *valueArray;
 
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showWeb"]) {
+        
+        BinderBuyCardViewController *bbcvc = [segue destinationViewController];
+        bbcvc.cardName = self.cardDetail.cardName;
+        bbcvc.cardSet = self.cardDetail.cardSet; 
+    }
+}
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BinderCardModel.h"
+#import "BinderBuyCardViewController.h"
 
 @interface BinderCardDetailViewController : UIViewController
 
