@@ -27,17 +27,22 @@ NSMutableArray *valueArray;
 }
 -(void) loadImage
 {
-    NSString *ImageURL = @"http://p.ebaystatic.com/aw/pics/globalheader/spr11.png";
-   // NSString *ImageURL = self.cardDetail.cardImageURL.accessibilityValue;
-    /*
-    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
-    self.cardImage.image = [UIImage imageWithData:imageData];
-     */
     
-    NSURL *url = [NSURL URLWithString:ImageURL];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    self.cardImage = [[UIImageView alloc] initWithImage:[UIImage imageWithData:data]];
-    [self.cardImage setImage:[UIImage imageWithData:data]];
+    //NSString *ImageURL = self.cardDetail.cardImageURL.;
+    //NSString *ImageURL = @"http://p.ebaystatic.com/aw/pics/globalheader/spr11.png";
+    //NSURL *imageUrl = [NSURL URLWithString:ImageURL];
+   
+    //NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
+    self.cardImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.cardDetail.cardImageURL]];
+    
+    //NSString *url = [info objectForKey:@"url"];
+    //NSURL *imageUrl = [NSURL URLWithString:url];
+    //newCard.cardImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageUrl]];
+    
+   // NSURL *url = [NSURL URLWithString:ImageURL];
+   // NSData *data = [NSData dataWithContentsOfURL:url];
+    //self.cardImage = [[UIImageView alloc] initWithImage:[UIImage imageWithData:data]];
+   // [self.cardImage setImage:[UIImage imageWithData:data]];
 }
 
 //takes the card information stored in cardDetail and sets the labels
@@ -52,6 +57,7 @@ NSMutableArray *valueArray;
         self.cardName.text = self.cardDetail.cardName;
         self.cardRarity.text = self.cardDetail.cardRarity;
         self.cardSet.text = self.cardDetail.cardSet;
+        self.cardImage.image = self.cardDetail.cardImage;
         //self.cardText.text = self.cardDetail.cardText;
         //self.averagePrice.text = self.cardDetail.averagePrice;
         //self.maxPrice.text = self.cardDetail.maxPrice;
@@ -152,7 +158,14 @@ NSMutableArray *valueArray;
             for(NSDictionary *autoPayArray in items[@"item"])
             {
                 if(self.cardDetail.cardImageURL == nil)
-                    self.cardDetail.cardImageURL = autoPayArray[@"galleryURL"];
+                {
+                   
+                    NSArray *tempGalleryArray = [autoPayArray objectForKey:@"galleryURL"];
+                    NSString *tempImage = [tempGalleryArray objectAtIndex:0];
+                    //newCard.cardPrice = [currentPriceLayer objectForKey:@"_value_"];
+                    NSURL *tempImageUrl = [NSURL URLWithString:tempImage];
+                    self.cardDetail.cardImageURL = tempImageUrl;
+                }
                 for(NSDictionary *autoPay in autoPayArray[@"sellingStatus"])
                 {
                     for(NSDictionary *values in autoPay[@"convertedCurrentPrice"])

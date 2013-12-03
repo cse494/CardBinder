@@ -93,12 +93,6 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="1085" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlV-TL-FWz">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="88" id="7Am-T5-Ned"/>
-                                                <constraint firstAttribute="width" constant="70" id="kxu-qu-L88"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Set:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufE-GH-JyF">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -115,9 +109,6 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1081" contentMode="left" text="nameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Td-GJ-Y8M">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="143" id="ebw-wO-b7t"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,6 +119,9 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1083" contentMode="left" text="rarityLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdg-D0-sVc">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="143" id="0Z7-Fs-cv9"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,27 +135,25 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="6Td-GJ-Y8M" firstAttribute="trailing" secondItem="1rQ-R1-FpP" secondAttribute="trailing" type="default" id="2U5-m2-1PA"/>
-                                    <constraint firstItem="WB2-ko-Yws" firstAttribute="leading" secondItem="jlV-TL-FWz" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="BNg-Ns-u1K"/>
-                                    <constraint firstItem="6Td-GJ-Y8M" firstAttribute="leading" secondItem="Nzn-LI-NAV" secondAttribute="leading" constant="156" id="CJy-k3-UBk"/>
-                                    <constraint firstItem="jlV-TL-FWz" firstAttribute="centerY" secondItem="Nzn-LI-NAV" secondAttribute="centerY" type="default" id="DRV-0r-svY"/>
+                                    <constraint firstItem="JMD-Vs-cbf" firstAttribute="leading" secondItem="Nzn-LI-NAV" secondAttribute="leading" constant="20" type="default" id="7D2-yn-Wy2"/>
+                                    <constraint firstItem="aDg-RK-t2w" firstAttribute="leading" secondItem="Nzn-LI-NAV" secondAttribute="leading" constant="20" type="default" id="Dee-Y1-DS6"/>
                                     <constraint firstItem="WB2-ko-Yws" firstAttribute="top" secondItem="Nzn-LI-NAV" secondAttribute="top" constant="47" id="FH2-R8-SWS"/>
-                                    <constraint firstItem="JMD-Vs-cbf" firstAttribute="leading" secondItem="jlV-TL-FWz" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="JRt-9N-adw"/>
-                                    <constraint firstItem="mdg-D0-sVc" firstAttribute="leading" secondItem="OSb-Yx-xbp" secondAttribute="leading" type="default" id="KPJ-cW-DJb"/>
-                                    <constraint firstItem="OSb-Yx-xbp" firstAttribute="trailing" secondItem="mdg-D0-sVc" secondAttribute="trailing" type="default" id="OzM-rs-UUU"/>
+                                    <constraint firstItem="mdg-D0-sVc" firstAttribute="trailing" secondItem="1rQ-R1-FpP" secondAttribute="trailing" type="default" id="Nwh-xZ-SwP"/>
                                     <constraint firstItem="OSb-Yx-xbp" firstAttribute="baseline" secondItem="JMD-Vs-cbf" secondAttribute="baseline" type="default" id="QSf-Ly-e62"/>
-                                    <constraint firstItem="1rQ-R1-FpP" firstAttribute="leading" secondItem="mdg-D0-sVc" secondAttribute="leading" type="default" id="UfX-1I-DsM"/>
-                                    <constraint firstItem="aDg-RK-t2w" firstAttribute="leading" secondItem="jlV-TL-FWz" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="WW2-X3-DSb"/>
                                     <constraint firstItem="aDg-RK-t2w" firstAttribute="top" secondItem="Nzn-LI-NAV" secondAttribute="top" constant="3" id="Wty-wu-SBJ"/>
                                     <constraint firstItem="6Td-GJ-Y8M" firstAttribute="baseline" secondItem="aDg-RK-t2w" secondAttribute="baseline" type="default" id="XBg-z2-7cN"/>
+                                    <constraint firstItem="OSb-Yx-xbp" firstAttribute="leading" secondItem="mdg-D0-sVc" secondAttribute="leading" type="default" id="YOW-3g-RQT"/>
+                                    <constraint firstItem="ufE-GH-JyF" firstAttribute="leading" secondItem="Nzn-LI-NAV" secondAttribute="leading" constant="20" type="default" id="YOm-rj-qAJ"/>
                                     <constraint firstAttribute="bottom" secondItem="JMD-Vs-cbf" secondAttribute="bottom" constant="9" id="YW1-HC-m5V"/>
                                     <constraint firstItem="ufE-GH-JyF" firstAttribute="top" secondItem="Nzn-LI-NAV" secondAttribute="top" constant="25" id="aGL-bO-bu4"/>
-                                    <constraint firstItem="ufE-GH-JyF" firstAttribute="leading" secondItem="jlV-TL-FWz" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="daB-QG-YGF"/>
-                                    <constraint firstItem="1rQ-R1-FpP" firstAttribute="trailing" secondItem="mdg-D0-sVc" secondAttribute="trailing" type="default" id="fTz-H4-Kan"/>
-                                    <constraint firstItem="1rQ-R1-FpP" firstAttribute="leading" secondItem="6Td-GJ-Y8M" secondAttribute="leading" type="default" id="hyA-Gm-WaT"/>
+                                    <constraint firstItem="OSb-Yx-xbp" firstAttribute="trailing" secondItem="mdg-D0-sVc" secondAttribute="trailing" type="default" id="bN9-qz-KMt"/>
+                                    <constraint firstItem="WB2-ko-Yws" firstAttribute="leading" secondItem="Nzn-LI-NAV" secondAttribute="leading" constant="20" type="default" id="bcb-dR-2qQ"/>
+                                    <constraint firstItem="1rQ-R1-FpP" firstAttribute="leading" secondItem="6Td-GJ-Y8M" secondAttribute="leading" type="default" id="cut-cP-8t5"/>
+                                    <constraint firstItem="mdg-D0-sVc" firstAttribute="leading" secondItem="1rQ-R1-FpP" secondAttribute="leading" type="default" id="e7g-cE-FOG"/>
+                                    <constraint firstItem="mdg-D0-sVc" firstAttribute="leading" secondItem="Nzn-LI-NAV" secondAttribute="leading" constant="91" id="eMT-Vd-ME7"/>
+                                    <constraint firstItem="1rQ-R1-FpP" firstAttribute="trailing" secondItem="6Td-GJ-Y8M" secondAttribute="trailing" type="default" id="qNq-Mh-O38"/>
                                     <constraint firstItem="1rQ-R1-FpP" firstAttribute="baseline" secondItem="ufE-GH-JyF" secondAttribute="baseline" type="default" id="qcg-d4-n7l"/>
                                     <constraint firstItem="mdg-D0-sVc" firstAttribute="baseline" secondItem="WB2-ko-Yws" secondAttribute="baseline" type="default" id="r0D-WF-jFR"/>
-                                    <constraint firstItem="jlV-TL-FWz" firstAttribute="leading" secondItem="Nzn-LI-NAV" secondAttribute="leading" constant="5" id="sv8-YU-t4h"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="ttQ-eI-Yec" kind="push" identifier="showDetail" id="rit-fH-OsG"/>
@@ -212,7 +204,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5w-SX-xbV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5w-SX-xbV">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="198" id="ROd-Mg-Vcl"/>
                                 </constraints>
@@ -506,6 +498,58 @@
             <point key="canvasLocation" x="2031" y="-287"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BinderAddCardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BinderAddCardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Cancel:"/>
+                <relationship kind="action" name="Save:"/>
+                <relationship kind="outlet" name="addCardNameText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="addCardQuantityText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="addCardRarityText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="addCardSetText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BinderBuyCardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BinderBuyCardViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ebayPage" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="BinderCardDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BinderCardDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="alertFeatures"/>
+                <relationship kind="outlet" name="averagePrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cardImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cardName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cardRarity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cardSet" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cardText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="maxPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="minPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="recentPrice" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BinderCardsListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BinderCardsListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addCard:"/>
+                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="BinderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BinderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ViewBinder:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

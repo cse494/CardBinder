@@ -177,9 +177,6 @@
     //for loop stores each cards price
     for (NSDictionary *diction in item) {
         BinderCardModel *newCard = [[BinderCardModel alloc]init];
-        //NSDictionary *imageURL = [diction objectForKey:@"im:image"];
-        //NSDictionary *imageSize = [imageURL objectForKey:@"2"];
-        //newAlbum.imageURL = [imageSize objectForKey:@"label"];
         NSArray *sellingStatus = [diction objectForKey:@"sellingStatus"];
         NSDictionary *sellingLayer = [sellingStatus objectAtIndex:0];
         NSArray *currentPrice = [sellingLayer objectForKey:@"currentPrice"];
