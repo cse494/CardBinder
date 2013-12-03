@@ -69,24 +69,25 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    /*BinderCardModel *object = self.arrayBinder
-    //[self loadCardListItems];
-    //[tableView reloadData];
-    //for(int i=0; i<self.arrayBinder.count;i++)
+    BinderCardModel *object = [self.arrayBinder objectAtIndex:indexPath.row];
+    [self loadCardListItems];
+    for(int i=0; i<self.arrayBinder.count;i++)
     {
-        if(object == [self.arrayBinder objectAtIndex:i])
+        BinderCardModel *tempDeleteCompare = [self.arrayBinder objectAtIndex:i];
+        if([object.cardName  isEqualToString: tempDeleteCompare.cardName])
         {
             [self.arrayBinder removeObjectAtIndex:i];
             [tableView reloadData];
+            self.searchBar.text=@"";
             [self saveCardListItems];
             return;
         }
             
-    }*/
+    }
     
-    [self.arrayBinder removeObjectAtIndex:indexPath];
+    /*[self.arrayBinder removeObjectAtIndex:indexPath];
     [tableView reloadData];
-    [self saveCardListItems];
+    [self saveCardListItems];*/
     
 }
 
