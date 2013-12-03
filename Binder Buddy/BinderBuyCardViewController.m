@@ -33,6 +33,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    //configure the spinner
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    spinner.hidesWhenStopped = YES;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+
     
     NSString *query = [NSString stringWithFormat:@"http://ebay.com/sch/-lot -x2 -x3 -grabbab -collection -binder -playset %@ %@", _cardName, _cardSet];
     
@@ -42,7 +49,10 @@
     
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_ebayPage loadRequest:requestObj];
+    
+    [spinner performSelector:@selector(stopAnimating) withObject:nil afterDelay:2];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
