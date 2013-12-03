@@ -69,12 +69,28 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [self.arrayBinder removeObjectAtIndex:indexPath.row];
+    /*BinderCardModel *object = self.arrayBinder
+    //[self loadCardListItems];
+    //[tableView reloadData];
+    //for(int i=0; i<self.arrayBinder.count;i++)
+    {
+        if(object == [self.arrayBinder objectAtIndex:i])
+        {
+            [self.arrayBinder removeObjectAtIndex:i];
+            [tableView reloadData];
+            [self saveCardListItems];
+            return;
+        }
+            
+    }*/
+    
+    [self.arrayBinder removeObjectAtIndex:indexPath];
     [tableView reloadData];
     [self saveCardListItems];
+    
 }
 
-//stores binder data into arrayBinder 
+//stores binder data into arrayBinder
 -(void)saveCardListItems{
     NSMutableData *data =[[NSMutableData alloc]init];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
@@ -194,14 +210,19 @@
 //prepares add card for binderaddcarddetailviewcontroller
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    self.searchBar.text = @"";
+    
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.myTableView indexPathForSelectedRow];
         BinderCardModel *object = self.arrayBinder[indexPath.row];
-        
+        [self loadCardListItems ];
+        [self.myTableView reloadData];
         [[segue destinationViewController] setCardDetail:object];
     }
     else if([segue.identifier isEqualToString:@"AddCard"]){
-        
+        [self loadCardListItems ];
+        [self.myTableView reloadData];
         UINavigationController *navigationController = segue.destinationViewController;
         BinderAddCardViewController *controller = (BinderAddCardViewController *)navigationController.topViewController;
         controller.delegate = self;
@@ -214,18 +235,35 @@
 #pragma mark - Search Bar Delegation
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    for(int i=0; i<_arrayBinder.count;i++)
-    {
-        if(searchBar.text)
+    NSMutableArray *searchedCards = [NSMutableArray array];
+    
+    
+        for(BinderCardModel *object in self.arrayBinder)
         {
             
+            if([searchBar.text isEqualToString:object.cardName])
+            {
+                [searchedCards addObject: object];
+            }
         }
+    
+    [self.arrayBinder removeAllObjects];
+    
+    for(BinderCardModel *object in searchedCards){
+            [self.arrayBinder addObject: object];
     }
+
+    [self.tableView reloadData];
+    
+    //int newRowIndex = [searchedCards.count];
+    //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
+    //NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     self.searchBar.text = @"";
+    [self loadCardListItems ];
     [self.tableView endEditing:YES];
     [self.tableView reloadData];
 }

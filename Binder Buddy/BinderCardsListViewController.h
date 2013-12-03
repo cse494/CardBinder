@@ -16,7 +16,7 @@
 @interface BinderCardsListViewController : UITableViewController <BinderAddCardViewControllerDelegate>
 
 -(IBAction)addCard:(id)sender;
-
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property(nonatomic, strong) IBOutlet UITableView *myTableView;
 @property(nonatomic, strong) NSMutableArray *arrayBinder;
