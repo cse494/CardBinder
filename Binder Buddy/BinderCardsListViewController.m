@@ -146,12 +146,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 2.0; //seconds
+    //lpgr.delegate = self;
+    [self.myTableView addGestureRecognizer:lpgr];
+    //[lpgr release];
     
     //holds each card detail from ebay
     self.arrayEbay =[[NSMutableArray alloc]init];
     [self loadCardListItems];
     NSLog(@"%@",[self dataFilePath]);
 }
+
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    CGPoint p = [gestureRecognizer locationInView:self.myTableView];
+    
+    NSIndexPath *indexPath = [self.myTableView indexPathForRowAtPoint:p];
+    
+    UITableViewCell *cell = [self.myTableView cellForRowAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor colorWithRed:0.31 green: 0.6 blue:.1 alpha:.2];
+    if (indexPath == nil)
+        NSLog(@"long press on table view but not on a row");
+    else
+        NSLog(@"long press on table view at row %d", indexPath.row);
+}
+
 
 - (void)didReceiveMemoryWarning
 {

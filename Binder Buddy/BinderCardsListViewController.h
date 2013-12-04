@@ -21,4 +21,5 @@
 @property(nonatomic, strong) IBOutlet UITableView *myTableView;
 @property(nonatomic, strong) NSMutableArray *arrayBinder;
 @property(nonatomic, strong) NSMutableArray *arrayEbay;
+//@property(nonatomic, strong) UILongPressGestureRecognizer *lpgr;
 @end
