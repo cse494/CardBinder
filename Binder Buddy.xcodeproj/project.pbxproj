@@ -12,6 +12,8 @@
 		90987CAA181C838C00F5EE6B /* BinderCardList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90987CA9181C838C00F5EE6B /* BinderCardList.plist */; };
 		C67E8B9B1815BC2F00516120 /* BinderCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C67E8B9A1815BC2F00516120 /* BinderCardModel.m */; };
 		C689B7EB1819C04E007FDC9A /* CardListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C689B7EA1819C04D007FDC9A /* CardListItem.m */; };
+		C6C66555184F8C3000B4254D /* BinderTradeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C66554184F8C3000B4254D /* BinderTradeListViewController.m */; };
+		C6C66558184F9AB200B4254D /* BinderCurrentTradeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C66557184F9AB200B4254D /* BinderCurrentTradeHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C6E587C118158D5500EAF1ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E587C018158D5500EAF1ED /* UIKit.framework */; };
 		C6E587C318158D5500EAF1ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E587C218158D5500EAF1ED /* Foundation.framework */; };
 		C6E587C518158D5500EAF1ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E587C418158D5500EAF1ED /* CoreGraphics.framework */; };
@@ -38,6 +40,10 @@
 		C67E8B9A1815BC2F00516120 /* BinderCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinderCardModel.m; sourceTree = "<group>"; };
 		C689B7E91819C04D007FDC9A /* CardListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardListItem.h; sourceTree = "<group>"; };
 		C689B7EA1819C04D007FDC9A /* CardListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardListItem.m; sourceTree = "<group>"; };
+		C6C66553184F8C3000B4254D /* BinderTradeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinderTradeListViewController.h; sourceTree = "<group>"; };
+		C6C66554184F8C3000B4254D /* BinderTradeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinderTradeListViewController.m; sourceTree = "<group>"; };
+		C6C66556184F9AB100B4254D /* BinderCurrentTradeHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinderCurrentTradeHandler.h; sourceTree = "<group>"; };
+		C6C66557184F9AB200B4254D /* BinderCurrentTradeHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinderCurrentTradeHandler.m; sourceTree = "<group>"; };
 		C6E587BD18158D5500EAF1ED /* Binder Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Binder Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E587C018158D5500EAF1ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C6E587C218158D5500EAF1ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +131,8 @@
 				C6E587CF18158D5500EAF1ED /* BinderAppDelegate.h */,
 				C6E587D018158D5500EAF1ED /* BinderAppDelegate.m */,
 				C6E587D818158D5500EAF1ED /* MainStoryboard.storyboard */,
+				C6C66556184F9AB100B4254D /* BinderCurrentTradeHandler.h */,
+				C6C66557184F9AB200B4254D /* BinderCurrentTradeHandler.m */,
 				C6E587E61815971500EAF1ED /* BinderCardDetailViewController.h */,
 				C6E587E71815971500EAF1ED /* BinderCardDetailViewController.m */,
 				C6E587E91815972D00EAF1ED /* BinderAddCardViewController.h */,
@@ -133,6 +141,8 @@
 				C6E587ED1815973E00EAF1ED /* BinderBuyCardViewController.m */,
 				C6E587E3181596DE00EAF1ED /* BinderCardsListViewController.h */,
 				C6E587E4181596DE00EAF1ED /* BinderCardsListViewController.m */,
+				C6C66553184F8C3000B4254D /* BinderTradeListViewController.h */,
+				C6C66554184F8C3000B4254D /* BinderTradeListViewController.m */,
 				C689B7E91819C04D007FDC9A /* CardListItem.h */,
 				C689B7EA1819C04D007FDC9A /* CardListItem.m */,
 				C6E587DB18158D5500EAF1ED /* BinderViewController.h */,
@@ -235,6 +245,8 @@
 				C67E8B9B1815BC2F00516120 /* BinderCardModel.m in Sources */,
 				C689B7EB1819C04E007FDC9A /* CardListItem.m in Sources */,
 				90987CA8181C7DED00F5EE6B /* CardGamesController.m in Sources */,
+				C6C66555184F8C3000B4254D /* BinderTradeListViewController.m in Sources */,
+				C6C66558184F9AB200B4254D /* BinderCurrentTradeHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

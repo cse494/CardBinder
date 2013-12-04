@@ -182,6 +182,22 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="rFQ-L6-Qv8">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="znk-SA-EOC">
+                            <rect key="frame" x="96" y="-1" width="128" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Go To Trade">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <segue destination="0yc-pW-Avd" kind="push" id="vb3-6e-Wuz"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Add Card" id="I9W-C8-Yk7">
                             <connections>
                                 <segue destination="KGY-8n-5hr" kind="modal" identifier="AddCard" id="aVE-Wd-vVy"/>
@@ -227,6 +243,7 @@
                                 <rect key="frame" x="68" y="7" width="184" height="198"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="198" id="ROd-Mg-Vcl"/>
+                                    <constraint firstAttribute="width" constant="184" id="VT7-BM-GNo"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Average: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STR-x1-PMF">
@@ -295,39 +312,72 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oL8-Oj-GLS">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="cBF-Tv-Mz8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add to Trade">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddToTrade:" destination="ttQ-eI-Yec" eventType="touchUpInside" id="7LU-lb-YA7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTk-bB-Znu">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Qbs-IR-uAR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quantity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRM-nr-z2e">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oL8-Oj-GLS" firstAttribute="top" secondItem="TTk-bB-Znu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2cf-MS-yGq"/>
                             <constraint firstAttribute="trailing" secondItem="3yl-WC-VDp" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2dA-DW-Ebk"/>
-                            <constraint firstItem="Y5w-SX-xbV" firstAttribute="top" secondItem="6a2-8J-tqO" secondAttribute="top" constant="7" id="2iB-az-gre"/>
                             <constraint firstItem="82e-uO-HKO" firstAttribute="baseline" secondItem="BKF-Kk-Wps" secondAttribute="baseline" type="default" id="3wp-lI-BI2"/>
+                            <constraint firstItem="STR-x1-PMF" firstAttribute="centerX" secondItem="Y5w-SX-xbV" secondAttribute="centerX" type="default" id="5cb-JF-reL"/>
                             <constraint firstItem="Slx-FE-SLd" firstAttribute="leading" secondItem="8Rz-p6-YWv" secondAttribute="leading" type="default" id="7vr-3N-zJs"/>
                             <constraint firstAttribute="trailing" secondItem="Wwz-Rs-qJX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="850-vd-Phl"/>
                             <constraint firstItem="Slx-FE-SLd" firstAttribute="top" secondItem="8Rz-p6-YWv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8rm-Xh-YbU"/>
                             <constraint firstItem="BKF-Kk-Wps" firstAttribute="leading" secondItem="OGv-BC-sYx" secondAttribute="leading" type="default" id="B3y-pC-lsi"/>
                             <constraint firstItem="3yl-WC-VDp" firstAttribute="baseline" secondItem="Slx-FE-SLd" secondAttribute="baseline" type="default" id="Dm8-bl-33h"/>
                             <constraint firstItem="yN0-z4-wC3" firstAttribute="baseline" secondItem="8Rz-p6-YWv" secondAttribute="baseline" type="default" id="F08-sN-SCo"/>
+                            <constraint firstItem="oL8-Oj-GLS" firstAttribute="leading" secondItem="TTk-bB-Znu" secondAttribute="leading" type="default" id="Ffh-Oq-lYm"/>
                             <constraint firstItem="mrJ-XP-5av" firstAttribute="baseline" secondItem="mqS-hk-6WA" secondAttribute="baseline" type="default" id="GFO-HD-WLo"/>
+                            <constraint firstItem="TTk-bB-Znu" firstAttribute="leading" secondItem="dRM-nr-z2e" secondAttribute="leading" type="default" id="Iga-bN-95q"/>
+                            <constraint firstItem="dRM-nr-z2e" firstAttribute="top" secondItem="Y5w-SX-xbV" secondAttribute="top" type="default" id="Jm3-xl-aTO"/>
                             <constraint firstItem="Wwz-Rs-qJX" firstAttribute="baseline" secondItem="mUk-5Z-U30" secondAttribute="baseline" type="default" id="L0I-eY-kea"/>
                             <constraint firstAttribute="trailing" secondItem="mdC-7n-rSa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LbP-T9-iOs"/>
                             <constraint firstItem="mqS-hk-6WA" firstAttribute="leading" secondItem="BKF-Kk-Wps" secondAttribute="leading" type="default" id="MgT-ZC-U31"/>
                             <constraint firstAttribute="trailing" secondItem="82e-uO-HKO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Nc6-P1-bKQ"/>
                             <constraint firstItem="OGv-BC-sYx" firstAttribute="leading" secondItem="STR-x1-PMF" secondAttribute="leading" type="default" id="RAX-6I-P8w"/>
                             <constraint firstItem="mUk-5Z-U30" firstAttribute="top" secondItem="Slx-FE-SLd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RGD-yl-4K9"/>
+                            <constraint firstItem="oL8-Oj-GLS" firstAttribute="leading" secondItem="yN0-z4-wC3" secondAttribute="leading" type="default" id="RSf-47-RaH"/>
                             <constraint firstItem="STR-x1-PMF" firstAttribute="leading" secondItem="mUk-5Z-U30" secondAttribute="leading" type="default" id="VIn-4W-KAY"/>
-                            <constraint firstItem="BKF-Kk-Wps" firstAttribute="leading" secondItem="6a2-8J-tqO" secondAttribute="leading" constant="68" id="W6n-v1-huK"/>
-                            <constraint firstItem="Y5w-SX-xbV" firstAttribute="centerX" secondItem="6a2-8J-tqO" secondAttribute="centerX" type="default" id="WDK-c1-b0b"/>
                             <constraint firstItem="mUk-5Z-U30" firstAttribute="leading" secondItem="Slx-FE-SLd" secondAttribute="leading" type="default" id="XRA-F3-GQa"/>
                             <constraint firstAttribute="trailing" secondItem="mrJ-XP-5av" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="aV3-gq-XwF"/>
                             <constraint firstItem="mdC-7n-rSa" firstAttribute="baseline" secondItem="OGv-BC-sYx" secondAttribute="baseline" type="default" id="ada-8v-Fvc"/>
+                            <constraint firstItem="Y5w-SX-xbV" firstAttribute="top" secondItem="6a2-8J-tqO" secondAttribute="top" constant="7" id="cIY-xW-Sbt"/>
                             <constraint firstItem="BKF-Kk-Wps" firstAttribute="top" secondItem="OGv-BC-sYx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hNp-M7-GC2"/>
+                            <constraint firstItem="TTk-bB-Znu" firstAttribute="top" secondItem="6a2-8J-tqO" secondAttribute="top" constant="30" id="hqc-h4-Kom"/>
                             <constraint firstAttribute="trailing" secondItem="yN0-z4-wC3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="l3S-RA-GMD"/>
                             <constraint firstItem="8Rz-p6-YWv" firstAttribute="top" secondItem="Y5w-SX-xbV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="onE-fw-csR"/>
                             <constraint firstItem="STR-x1-PMF" firstAttribute="baseline" secondItem="Eas-iP-Spu" secondAttribute="baseline" type="default" id="p8u-Q5-xYa"/>
-                            <constraint firstItem="8Rz-p6-YWv" firstAttribute="leading" secondItem="Y5w-SX-xbV" secondAttribute="leading" type="default" id="pLe-8j-KTx"/>
                             <constraint firstItem="STR-x1-PMF" firstAttribute="top" secondItem="mUk-5Z-U30" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tA9-ia-rWT"/>
                             <constraint firstAttribute="trailing" secondItem="Eas-iP-Spu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uVE-3S-tlw"/>
                             <constraint firstItem="mqS-hk-6WA" firstAttribute="top" secondItem="BKF-Kk-Wps" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vL7-gL-rt2"/>
+                            <constraint firstItem="Y5w-SX-xbV" firstAttribute="leading" secondItem="6a2-8J-tqO" secondAttribute="leading" constant="12" id="wZ7-8k-MRb"/>
                             <constraint firstItem="OGv-BC-sYx" firstAttribute="top" secondItem="STR-x1-PMF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="yk9-PM-Lgd"/>
                         </constraints>
                     </view>
@@ -343,6 +393,7 @@
                         <outlet property="averagePrice" destination="Eas-iP-Spu" id="QOt-Li-Kh4"/>
                         <outlet property="cardImage" destination="Y5w-SX-xbV" id="tF0-2Z-QtV"/>
                         <outlet property="cardName" destination="yN0-z4-wC3" id="Rwk-OM-QBo"/>
+                        <outlet property="cardQuantityToAdd" destination="TTk-bB-Znu" id="G3M-WZ-Pp0"/>
                         <outlet property="cardRarity" destination="Wwz-Rs-qJX" id="zMM-sw-X9Y"/>
                         <outlet property="cardSet" destination="3yl-WC-VDp" id="9cS-3e-z9j"/>
                         <outlet property="maxPrice" destination="82e-uO-HKO" id="Zub-o1-Teb"/>
@@ -353,6 +404,120 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2T-7i-4RF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2031" y="319"/>
+        </scene>
+        <!--Binder Trade List View Controller-->
+        <scene sceneID="kRh-Vo-92A">
+            <objects>
+                <tableViewController id="0yc-pW-Avd" customClass="BinderTradeListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="113" sectionHeaderHeight="22" sectionFooterHeight="22" id="BJF-N4-URZ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Trade Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Mj-hX-59l">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="113" id="anK-0r-cDl">
+                                <rect key="frame" x="0.0" y="66" width="320" height="113"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Card Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Le-p2-TYz">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Set:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIt-ND-FfM">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rarity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uz-1v-1rC">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quantity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usZ-s2-63a">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2n-T4-t29">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="200" contentMode="left" text="cardNameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvW-I9-N6e">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="201" contentMode="left" text="setLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8k-vU-Lm5">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="202" contentMode="left" text="rarityLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAE-Ya-8sk">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="203" contentMode="left" text="quantityLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irX-Tw-uvc">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="204" contentMode="left" text="priceLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trx-jG-ZF3">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="irX-Tw-uvc" firstAttribute="leading" secondItem="DAE-Ya-8sk" secondAttribute="leading" type="default" id="0iT-dd-Nr9"/>
+                                    <constraint firstItem="bvW-I9-N6e" firstAttribute="baseline" secondItem="0Le-p2-TYz" secondAttribute="baseline" type="default" id="3qO-89-2vA"/>
+                                    <constraint firstItem="0Le-p2-TYz" firstAttribute="leading" secondItem="anK-0r-cDl" secondAttribute="leading" constant="20" type="default" id="9gp-DP-yPp"/>
+                                    <constraint firstItem="Trx-jG-ZF3" firstAttribute="baseline" secondItem="Z2n-T4-t29" secondAttribute="baseline" type="default" id="Cb7-vc-qc5"/>
+                                    <constraint firstItem="Trx-jG-ZF3" firstAttribute="leading" secondItem="irX-Tw-uvc" secondAttribute="leading" type="default" id="Idt-31-EvF"/>
+                                    <constraint firstItem="Z2n-T4-t29" firstAttribute="leading" secondItem="anK-0r-cDl" secondAttribute="leading" constant="20" type="default" id="M0C-MX-TG1"/>
+                                    <constraint firstItem="bvW-I9-N6e" firstAttribute="leading" secondItem="0Le-p2-TYz" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="WYV-8L-CoQ"/>
+                                    <constraint firstItem="E8k-vU-Lm5" firstAttribute="leading" secondItem="0Le-p2-TYz" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="YjH-MW-lMm"/>
+                                    <constraint firstAttribute="bottom" secondItem="usZ-s2-63a" secondAttribute="bottom" constant="26" id="Ynn-NU-hof"/>
+                                    <constraint firstItem="E8k-vU-Lm5" firstAttribute="baseline" secondItem="bIt-ND-FfM" secondAttribute="baseline" type="default" id="b1N-lv-Itx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z2n-T4-t29" secondAttribute="bottom" constant="8" id="cOy-pS-BLX"/>
+                                    <constraint firstItem="0Le-p2-TYz" firstAttribute="top" secondItem="anK-0r-cDl" secondAttribute="top" constant="9" id="ciD-tl-d96"/>
+                                    <constraint firstItem="bIt-ND-FfM" firstAttribute="leading" secondItem="anK-0r-cDl" secondAttribute="leading" constant="20" type="default" id="gAI-Zy-09d"/>
+                                    <constraint firstItem="usZ-s2-63a" firstAttribute="leading" secondItem="anK-0r-cDl" secondAttribute="leading" constant="20" type="default" id="kI7-0d-nr4"/>
+                                    <constraint firstItem="bIt-ND-FfM" firstAttribute="top" secondItem="anK-0r-cDl" secondAttribute="top" constant="29" id="nKW-X6-B5c"/>
+                                    <constraint firstItem="DAE-Ya-8sk" firstAttribute="centerY" secondItem="anK-0r-cDl" secondAttribute="centerY" type="default" id="nlo-hp-5g3"/>
+                                    <constraint firstItem="DAE-Ya-8sk" firstAttribute="leading" secondItem="E8k-vU-Lm5" secondAttribute="leading" type="default" id="onm-VA-rt3"/>
+                                    <constraint firstItem="4Uz-1v-1rC" firstAttribute="leading" secondItem="anK-0r-cDl" secondAttribute="leading" constant="20" type="default" id="tlF-Zf-iMy"/>
+                                    <constraint firstItem="irX-Tw-uvc" firstAttribute="baseline" secondItem="usZ-s2-63a" secondAttribute="baseline" type="default" id="wHJ-sk-ejo"/>
+                                    <constraint firstItem="DAE-Ya-8sk" firstAttribute="baseline" secondItem="4Uz-1v-1rC" secondAttribute="baseline" type="default" id="yaZ-cD-wzs"/>
+                                </constraints>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0yc-pW-Avd" id="jdY-da-X3I"/>
+                            <outlet property="delegate" destination="0yc-pW-Avd" id="Qod-dM-ZE5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hjt-SM-ort"/>
+                    <connections>
+                        <outlet property="myTradeTableView" destination="BJF-N4-URZ" id="lGv-hL-8IE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sHz-9a-rAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2031" y="910"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="63U-gP-T5Q">

@@ -7,6 +7,7 @@
 //
 
 #import "BinderViewController.h"
+#import "BinderCurrentTradeHandler.h"
 
 @interface BinderViewController ()
 
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    BinderCurrentTradeHandler *trade = [BinderCurrentTradeHandler sharedTrade];
+    trade.currentTrade = [[NSMutableArray alloc] init];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

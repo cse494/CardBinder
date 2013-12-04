@@ -7,6 +7,8 @@
 //
 
 #import "BinderCardDetailViewController.h"
+#import "BinderCurrentTradeHandler.h"
+
 NSString *counter = @"";
 NSMutableArray *valueArray;
 @interface BinderCardDetailViewController ()
@@ -28,21 +30,7 @@ NSMutableArray *valueArray;
 -(void) loadImage
 {
     
-    //NSString *ImageURL = self.cardDetail.cardImageURL.;
-    //NSString *ImageURL = @"http://p.ebaystatic.com/aw/pics/globalheader/spr11.png";
-    //NSURL *imageUrl = [NSURL URLWithString:ImageURL];
-   
-    //NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
     self.cardImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.cardDetail.cardImageURL]];
-    
-    //NSString *url = [info objectForKey:@"url"];
-    //NSURL *imageUrl = [NSURL URLWithString:url];
-    //newCard.cardImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageUrl]];
-    
-   // NSURL *url = [NSURL URLWithString:ImageURL];
-   // NSData *data = [NSData dataWithContentsOfURL:url];
-    //self.cardImage = [[UIImageView alloc] initWithImage:[UIImage imageWithData:data]];
-   // [self.cardImage setImage:[UIImage imageWithData:data]];
 }
 
 //takes the card information stored in cardDetail and sets the labels
@@ -52,18 +40,11 @@ NSMutableArray *valueArray;
     //update the card detail interface with the card item
     
     if(self.cardDetail){
-       
-        //self.cardImage.image = self.cardDetail.cardImage;
+        
         self.cardName.text = self.cardDetail.cardName;
         self.cardRarity.text = self.cardDetail.cardRarity;
         self.cardSet.text = self.cardDetail.cardSet;
         self.cardImage.image = self.cardDetail.cardImage;
-        //self.cardText.text = self.cardDetail.cardText;
-        //self.averagePrice.text = self.cardDetail.averagePrice;
-        //self.maxPrice.text = self.cardDetail.maxPrice;
-        //self.minPrice.text = self.cardDetail.minPrice;
-        //self.recentPrice.text = self.cardDetail.recentPrice;
-        
     }
 }
 
@@ -89,6 +70,22 @@ NSMutableArray *valueArray;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)AddToTrade:(id)sender{
+    BinderCardModel *item = self.cardDetail;
+    item.cardPrice = [NSString stringWithFormat:@"%g", self.cardPrice];
+    item.cardQuantity = self.cardQuantityToAdd.text;
+    BinderCurrentTradeHandler *trade = [BinderCurrentTradeHandler sharedTrade];
+    [trade.currentTrade addObject:item];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Added"
+                                                   message: @"Card has been added to Trade"
+                                                  delegate: self
+                                         cancelButtonTitle:@"Cancel"
+                                         otherButtonTitles:@"OK",nil];
+    
+    [alert show];
+    
 }
 
 -(void) performSearchForCard
@@ -173,7 +170,10 @@ NSMutableArray *valueArray;
                         NSString *value = values[@"__value__"];
                         [valueArray addObject:[NSNumber numberWithDouble:value.doubleValue]];
                         if(recent == 0.0)
+                        {
                             recent = [value doubleValue];
+                            self.cardPrice = [value doubleValue];
+                        }
                     }
                     
                 }

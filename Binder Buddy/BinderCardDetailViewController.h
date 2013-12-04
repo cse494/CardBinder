@@ -12,9 +12,14 @@
 
 @interface BinderCardDetailViewController : UIViewController
 
-@property(strong, nonatomic) BinderCardModel * cardDetail;
+@property(strong, nonatomic) BinderCardModel *cardDetail;
 
 //links to each of the labels for card detail
+-(IBAction)AddToTrade:(id)sender;
+@property(strong,nonatomic) IBOutlet UITextField *cardQuantityToAdd;
+@property(nonatomic, strong) NSMutableArray *arrayTrade;
+@property(nonatomic) double cardPrice;
+
 @property(strong, nonatomic) IBOutlet UILabel *averagePrice;
 @property(strong, nonatomic) IBOutlet UILabel *maxPrice;
 @property(strong, nonatomic) IBOutlet UILabel *minPrice;
@@ -32,3 +37,5 @@
 //users can surf web normally and buy items
 
 @end
+
+
